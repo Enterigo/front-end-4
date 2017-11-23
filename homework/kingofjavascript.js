@@ -17,7 +17,6 @@ function testisEmpty(human) {
 
 //1.2
 var array = [];
-var sum = 0;
 function isEmpty(array) {
     for(var key in array) {
         if(array.hasOwnProperty(key))
@@ -25,30 +24,23 @@ function isEmpty(array) {
     }
     return false;
 }
-    function createArray(array) {
-    for(var i=0;i<array.length;i++){
-        sum = sum + array[i];
-    }
-    console.log("sumData of this array: ");
-        isEmpty(array);
-        return sum;
-}
 
+function sumData(array) {
+    if (isEmpty(array)) {
+        var sum = 0;
+        for (var i in array) {
+            console.log(array[i]);
+            if (typeof array[i] === 'number')
+                sum += array[i];
+        }
+        return sum;
+    }
+}
 //2
 var codeObj = {
     'length': [45, 109, 32, 39, 1, 0]
     };
     codeObj['length'][23]=95;
-    function sumData(array) {
-        var sum=0;
-        for (var i in array){
-            console.log(array[i]);
-            if(typeof array[i] === 'number')
-                sum += array[i];
-        }
-        return sum;
-
-    }
     sumData(codeObj['length']);
 
 //3

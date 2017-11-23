@@ -5,9 +5,13 @@ console.log("exponent - піднесення до степеня");
 var a, b;
 function min (a,b) {
     if(a>b){
-        console.log("Найменше значення - ", b)}
+        console.log("Найменше значення - ");
+        return b;
+    }
     else if(b>a){
-        console.log("Найменше значення - ", a)}
+        console.log("Найменше значення - ");
+        return a;
+    }
     else if(a==b){
         console.log("Значення рівні")}
 }
@@ -17,7 +21,13 @@ function average (a,b) {
 }
 function exponent (a,b) {
     if(a && b >0){
-        var c=Math.pow(a,b); console.log("В результаті піднесення числа ", a, "до степеня ", b,"вийшло ", c)}
+        var c=1;
+        var i=1;
+        while (b>=i){
+            c=a*c;
+            i++;
+        }
+        console.log("В результаті піднесення числа", a, "до степеня ", b,"вийшло ", c)}
     else if(a == 0 && b>0){
         c=b*b; console.log("В результаті піднесення числа ", b, "до квадрату, вийшло ", c)}
     else if(a>0 && b == 0){
